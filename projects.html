@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Proyectos y Sistemas | Jefferson Guaranda - Ingeniero en Sistemas Computacionales</title>
+  <!-- Estilos Globales primero y Específicos después -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       ENCABEZADO Y NAVEGACIÓN INSTITUCIONAL
+       ======================================================================== -->
+  <header class="site-header">
+    <nav class="navbar container">
+      <a href="index.html" class="logo">
+        <span class="logo-name">Jefferson Guaranda</span>
+        <span class="logo-role">Ingeniería en Sistemas Computacionales</span>
+      </a>
+      <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="index.html" class="nav-link">Inicio</a></li>
+        <li><a href="about.html" class="nav-link">Sobre mí</a></li>
+        <li><a href="skills.html" class="nav-link">Habilidades</a></li>
+        <li><a href="projects.html" class="nav-link">Proyectos</a></li>
+        <li><a href="contact.html" class="nav-link">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ========================================================================
+       CONTENIDO PRINCIPAL: PROYECTOS
+       ======================================================================== -->
+  <main>
+    <section class="section projects-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Portafolio Operativo</span>
+          <h2 class="section-title">Sistemas y Proyectos Ejecutados</h2>
+          <p class="section-subtitle">
+            Participación técnica en desarrollo de software, migraciones a la nube y soporte a producción bancaria y de telecomunicaciones.
+          </p>
+        </div>
+
+        <!-- Cuadrícula de Sistemas Empresariales -->
+        <div class="projects-grid">
+          <!-- Proyecto 1: Claro / Global HITSS -->
+          <article class="project-card">
+            <div class="project-header-bar">
+              <span class="project-client-name">Global HITSS · Claro</span>
+              <span>Infraestructura & Cloud</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Migración de Servidores & Billing Masivo</h3>
+              <p class="project-desc">
+                Migración de servidores físicos Linux hacia infraestructura en la nube con Oracle 11g/12g. Implementación de automatizaciones en Shell Linux para la carga continua de archivos de llamadas y facturación masiva.
+              </p>
+              <div class="project-tags">
+                <span class="badge">Shell Linux</span>
+                <span class="badge">Oracle 12g</span>
+                <span class="badge">PL/SQL Batch</span>
+                <span class="badge">Billing Claro</span>
+              </div>
+              <div class="project-actions">
+                <a href="contact.html" class="btn btn-primary">Consultar Detalles</a>
+                <a href="about.html" class="btn btn-outline">Ver Experiencia</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 2: Banco de Machala -->
+          <article class="project-card">
+            <div class="project-header-bar">
+              <span class="project-client-name">Banco de Machala</span>
+              <span>Banca Transaccional</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Plataforma Web Oronet</h3>
+              <p class="project-desc">
+                Desarrollo en ambiente web para procesamiento de transacciones bancarias de clientes. Construido en C#/.NET bajo arquitectura MVC con consumo de servicios REST de alta seguridad y disponibilidad.
+              </p>
+              <div class="project-tags">
+                <span class="badge">.NET MVC</span>
+                <span class="badge">C#</span>
+                <span class="badge">Servicios REST</span>
+                <span class="badge">Seguridad Bancaria</span>
+              </div>
+              <div class="project-actions">
+                <a href="contact.html" class="btn btn-primary">Consultar Detalles</a>
+                <a href="about.html" class="btn btn-outline">Ver Experiencia</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 3: Banco del Pacífico (Microreferidos) -->
+          <article class="project-card">
+            <div class="project-header-bar">
+              <span class="project-client-name">Banco del Pacífico</span>
+              <span>Aplicación Móvil</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Microreferidos Banca Retail</h3>
+              <p class="project-desc">
+                Desarrollo de aplicativo móvil para gestión y transacción de micro-créditos en Xamarin Forms (Android e iOS) bajo patrón MVVM. Consumo de servicios REST empresariales, pruebas de QA y documentación técnica.
+              </p>
+              <div class="project-tags">
+                <span class="badge">Xamarin Forms</span>
+                <span class="badge">C# / MVVM</span>
+                <span class="badge">Android & iOS</span>
+                <span class="badge">REST APIs</span>
+              </div>
+              <div class="project-actions">
+                <a href="contact.html" class="btn btn-primary">Consultar Detalles</a>
+                <a href="about.html" class="btn btn-outline">Ver Experiencia</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 4: Righttek Corporativo -->
+          <article class="project-card">
+            <div class="project-header-bar">
+              <span class="project-client-name">Righttek Tecnología</span>
+              <span>Gestión Corporativa</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Plataforma Móvil GoTalent</h3>
+              <p class="project-desc">
+                Desarrollo de aplicativo móvil para la optimización de procesos y servicios internos y externos de la organización. Construido en Flutter con arquitectura MVVM y consumo de microservicios corporativos.
+              </p>
+              <div class="project-tags">
+                <span class="badge">Flutter</span>
+                <span class="badge">Dart</span>
+                <span class="badge">MVVM</span>
+                <span class="badge">Microservicios</span>
+              </div>
+              <div class="project-actions">
+                <a href="contact.html" class="btn btn-primary">Consultar Detalles</a>
+                <a href="about.html" class="btn btn-outline">Ver Experiencia</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 5: Banco del Pacífico (Banca Vacuna) -->
+          <article class="project-card">
+            <div class="project-header-bar">
+              <span class="project-client-name">Banco del Pacífico</span>
+              <span>Salud & Contingencia</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Banca Vacuna & Vacunómetro</h3>
+              <p class="project-desc">
+                Desarrollo de aplicativo móvil en Flutter (Estructura Bloc) y microservicios en Java Spring Boot para registro y trazabilidad de vacunación, con scripts en Oracle para sincronización y actualización masiva de datos.
+              </p>
+              <div class="project-tags">
+                <span class="badge">Flutter Bloc</span>
+                <span class="badge">Spring Boot</span>
+                <span class="badge">Scripts Oracle</span>
+                <span class="badge">Xamarin</span>
+              </div>
+              <div class="project-actions">
+                <a href="contact.html" class="btn btn-primary">Consultar Detalles</a>
+                <a href="about.html" class="btn btn-outline">Ver Experiencia</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Proyecto 6: Banco del Pacífico (Microservicio) -->
+          <article class="project-card">
+            <div class="project-header-bar">
+              <span class="project-client-name">Banco del Pacífico</span>
+              <span>Backend & Microservicios</span>
+            </div>
+            <div class="project-body">
+              <h3 class="project-title">Microservicio Cash-Servicio-FrontCol</h3>
+              <p class="project-desc">
+                Soporte y reestructuración de microservicio desarrollado en Java con framework Spring Boot. Pruebas de funcionalidad, depuración de endpoints, resolución de cuellos de botella y validación de transacciones financieras.
+              </p>
+              <div class="project-tags">
+                <span class="badge">Java</span>
+                <span class="badge">Spring Boot 4</span>
+                <span class="badge">Microservicios</span>
+                <span class="badge">Control de Calidad</span>
+              </div>
+              <div class="project-actions">
+                <a href="contact.html" class="btn btn-primary">Consultar Detalles</a>
+                <a href="about.html" class="btn btn-outline">Ver Experiencia</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================
+       PIE DE PÁGINA INSTITUCIONAL
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p class="footer-copy">
+        &copy; <span id="current-year"></span> Jefferson Fabian Guaranda Soledispa · Ingeniero en Sistemas Computacionales.<br>
+        Portafolio profesional desarrollado bajo estándares web nativos (HTML5, CSS3 y Vanilla JS).
+      </p>
+      <ul class="footer-links">
+        <li><a href="https://ec.linkedin.com/in/fabian-guaranda-24b095121" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        <li><a href="https://github.com/93Jefferson" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="contact.html">Contacto</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Script global para menú móvil, enlace activo y año dinámico -->
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#4f46e5" />
+    </linearGradient>
+    <linearGradient id="avatarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000000" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+
+  <!-- Background circle with gradient and glow -->
+  <circle cx="200" cy="200" r="190" fill="url(#bgGrad)" filter="url(#shadow)"/>
+  
+  <!-- Subtle decorative rings -->
+  <circle cx="200" cy="200" r="165" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2" stroke-dasharray="6,6"/>
+  <circle cx="200" cy="200" r="180" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="3"/>
+
+  <!-- Developer Avatar Silhouette -->
+  <!-- Shoulders / Torso -->
+  <path d="M 100 350 C 100 280, 140 260, 200 260 C 260 260, 300 280, 300 350 Z" fill="#ffffff" opacity="0.95"/>
+  <!-- Neck -->
+  <rect x="180" y="220" width="40" height="50" rx="8" fill="#e2e8f0"/>
+  <!-- Head -->
+  <circle cx="200" cy="170" r="55" fill="#f8fafc"/>
+  <!-- Hair / Headset silhouette -->
+  <path d="M 142 165 C 142 120, 160 100, 200 100 C 240 100, 258 120, 258 165 C 245 140, 225 135, 200 135 C 175 135, 155 140, 142 165 Z" fill="#0f172a"/>
+  <!-- Headphone band -->
+  <path d="M 136 170 C 136 125, 162 105, 200 105 C 238 105, 264 125, 264 170" fill="none" stroke="#38bdf8" stroke-width="7" stroke-linecap="round"/>
+  <!-- Headphone pads -->
+  <rect x="130" y="160" width="14" height="30" rx="6" fill="#38bdf8"/>
+  <rect x="256" y="160" width="14" height="30" rx="6" fill="#38bdf8"/>
+  <!-- Glasses -->
+  <rect x="165" y="162" width="28" height="18" rx="5" fill="none" stroke="#0f172a" stroke-width="4"/>
+  <rect x="207" y="162" width="28" height="18" rx="5" fill="none" stroke="#0f172a" stroke-width="4"/>
+  <line x1="193" y1="171" x2="207" y2="171" stroke="#0f172a" stroke-width="4"/>
+  <!-- Smile -->
+  <path d="M 188 198 Q 200 208 212 198" fill="none" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Code symbol badge -->
+  <g transform="translate(270, 270)">
+    <circle cx="25" cy="25" r="28" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+    <text x="25" y="32" font-family="monospace" font-size="20" font-weight="bold" fill="#38bdf8" text-anchor="middle">&lt;/&gt;</text>
+  </g>
+</svg>
