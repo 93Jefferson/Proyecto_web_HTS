@@ -3,16 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a2540">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
   <title>Jefferson Guaranda | Ingeniero en Sistemas Computacionales</title>
-  <!-- Estilos Globales primero y Específicos después -->
   <link rel="stylesheet" href="css/global.css">
   <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
 
-  <!-- ========================================================================
+  <!-- ======================================================================
        ENCABEZADO Y NAVEGACIÓN INSTITUCIONAL
-       ======================================================================== -->
+       ====================================================================== -->
   <header class="site-header">
     <nav class="navbar container">
       <a href="index.html" class="logo">
@@ -20,142 +22,249 @@
         <span class="logo-role">Ingeniería en Sistemas Computacionales</span>
       </a>
       <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
+        <span></span><span></span><span></span>
       </button>
       <ul class="nav-menu" id="nav-menu">
-        <li><a href="index.html" class="nav-link">Inicio</a></li>
-        <li><a href="about.html" class="nav-link">Sobre mí</a></li>
-        <li><a href="skills.html" class="nav-link">Habilidades</a></li>
+        <li><a href="index.html"    class="nav-link">Inicio</a></li>
+        <li><a href="about.html"    class="nav-link">Sobre mí</a></li>
+        <li><a href="skills.html"   class="nav-link">Habilidades</a></li>
         <li><a href="projects.html" class="nav-link">Proyectos</a></li>
-        <li><a href="contact.html" class="nav-link">Contacto</a></li>
+        <li><a href="contact.html"  class="nav-link">Contacto</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ========================================================================
+  <!-- ======================================================================
        CONTENIDO PRINCIPAL: INICIO
-       ======================================================================== -->
+       ====================================================================== -->
   <main>
-    <!-- Sección Hero Institucional -->
+
+    <!-- ── SECCIÓN HERO ─────────────────────────────────────────────────── -->
     <section class="hero-section">
       <div class="container hero">
+
+        <!-- Columna de texto -->
         <div class="hero-content">
           <div class="hero-eyebrow">Perfil Profesional · Global HITSS</div>
-          <h1 class="hero-title">
-            Ingeniero en Sistemas Computacionales enfocado en <span class="title-highlight">producción crítica</span> y desarrollo empresarial.
-          </h1>
-          <p class="hero-description">
-            Especializado en soporte a producción para telecomunicaciones (Billing Claro), automatización mediante Shell Linux y PL/SQL Oracle, y desarrollo de soluciones transaccionales web y móviles con .NET, Java Spring Boot y Flutter.
-          </p>
 
-          <div class="hero-meta-badges">
-            <span class="hero-meta-badge">Ingeniería de Software</span>
-            <span class="hero-meta-badge">Sistemas de Facturación</span>
-            <span class="hero-meta-badge">Bases de Datos Oracle</span>
-            <span class="hero-meta-badge">Entornos Linux / Unix</span>
-          </div>
+          <h1 class="hero-title">
+            Ingeniero en Sistemas Computacionales enfocado en
+            <span class="title-highlight">producción crítica</span>
+            y desarrollo empresarial.
+          </h1>
+
+          <!-- ── ACORDEÓN MÓVIL: descripción del perfil ── -->
+          <!-- En escritorio se muestra como párrafo normal;
+               en móvil se colapsa bajo un <details> nativo -->
+          <details class="hero-accordion" open>
+            <summary class="hero-accordion-summary">
+              <span class="hero-accordion-label">Acerca del perfil</span>
+              <svg class="hero-accordion-chevron" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="hero-accordion-body">
+              <p class="hero-description">
+                Especializado en soporte a producción para telecomunicaciones
+                (Billing Claro), automatización mediante Shell Linux y PL/SQL Oracle,
+                y desarrollo de soluciones transaccionales web y móviles con .NET,
+                Java Spring Boot y Flutter.
+              </p>
+              <div class="hero-meta-badges">
+                <span class="hero-meta-badge">Ingeniería de Software</span>
+                <span class="hero-meta-badge">Sistemas de Facturación</span>
+                <span class="hero-meta-badge">Bases de Datos Oracle</span>
+                <span class="hero-meta-badge">Entornos Linux / Unix</span>
+              </div>
+            </div>
+          </details>
 
           <div class="hero-actions">
-            <a href="projects.html" class="btn btn-primary">Ver Proyectos de Producción</a>
-            <a href="contact.html" class="btn btn-outline">Contacto Directo</a>
+            <a href="projects.html" class="btn btn-primary">Ver Proyectos</a>
+            <a href="contact.html"  class="btn btn-outline">Contacto Directo</a>
           </div>
         </div>
 
+        <!-- Fotografía de perfil -->
         <div class="hero-image-wrapper">
           <div class="hero-avatar-frame">
-            <img src="assets/img/profile.jpg" alt="Ing. Jefferson Guaranda Soledispa" class="hero-avatar">
+            <img src="assets/img/profile.jpg"
+                 alt="Ing. Jefferson Guaranda Soledispa"
+                 class="hero-avatar">
             <div class="avatar-caption">Ing. Jefferson Guaranda S.</div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <!-- Sección de Competencias Principales -->
+    <!-- ── SECCIÓN ESPECIALIDADES TÉCNICAS (acordeones en móvil) ────────── -->
     <section class="section highlights-section">
       <div class="container">
+
         <div class="section-header">
           <span class="section-tag">Capacidades Centrales</span>
           <h2 class="section-title">Especialidades Técnicas</h2>
-          <p class="section-subtitle">
-            Experiencia comprobada en entornos corporativos de alta demanda transaccional, disponibilidad y precisión de datos.
+          <p class="section-subtitle mobile-hidden">
+            Experiencia comprobada en entornos corporativos de alta demanda
+            transaccional, disponibilidad y precisión de datos.
           </p>
         </div>
 
+        <!-- En escritorio: cuadrícula de 3 columnas.
+             En móvil: lista de acordeones apilados. -->
         <div class="highlights-grid">
-          <!-- Tarjeta 1: Billing y Producción -->
-          <article class="highlight-card">
-            <div class="highlight-header">
-              <div class="highlight-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                  <line x1="8" y1="21" x2="16" y2="21"></line>
-                  <line x1="12" y1="17" x2="12" y2="21"></line>
-                </svg>
-              </div>
-              <h3>Soporte a Producción & Billing</h3>
-            </div>
-            <p>
-              Operación continua del ciclo de facturación para clientes Claro en Global HITSS. Monitoreo proactivo de procesos batch, resolución de incidencias en caliente y cumplimiento estricto de SLAs.
-            </p>
-          </article>
 
-          <!-- Tarjeta 2: Bases de Datos y Shell -->
-          <article class="highlight-card">
-            <div class="highlight-header">
-              <div class="highlight-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-                </svg>
+          <!-- ── Especialidad 1 ── -->
+          <details class="highlight-card highlight-accordion">
+            <summary class="highlight-accordion-summary">
+              <div class="highlight-header-inner">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8"  y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+                <h3>Soporte a Producción &amp; Billing</h3>
               </div>
-              <h3>PL/SQL Oracle & Automatización Linux</h3>
+              <svg class="highlight-chevron" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="highlight-accordion-body">
+              <p>
+                Operación continua del ciclo de facturación para clientes Claro
+                en Global HITSS. Monitoreo proactivo de procesos batch, resolución
+                de incidencias en caliente y cumplimiento estricto de SLAs.
+              </p>
             </div>
-            <p>
-              Diseño de scripts Shell para procesamiento por lotes y consultas complejas en PL/SQL Oracle. Experiencia en migración de servidores físicos a nubes privadas y auditoría de datos.
-            </p>
-          </article>
+          </details>
 
-          <!-- Tarjeta 3: Desarrollo Web y Móvil -->
-          <article class="highlight-card">
-            <div class="highlight-header">
-              <div class="highlight-icon-box">
-                <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="16 18 22 12 16 6"></polyline>
-                  <polyline points="8 6 2 12 8 18"></polyline>
-                </svg>
+          <!-- ── Especialidad 2 ── -->
+          <details class="highlight-card highlight-accordion">
+            <summary class="highlight-accordion-summary">
+              <div class="highlight-header-inner">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                    <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                    <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                  </svg>
+                </div>
+                <h3>PL/SQL Oracle &amp; Automatización Linux</h3>
               </div>
-              <h3>Desarrollo Transaccional (.NET / Java / Flutter)</h3>
+              <svg class="highlight-chevron" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="highlight-accordion-body">
+              <p>
+                Diseño de scripts Shell para procesamiento por lotes y consultas
+                complejas en PL/SQL Oracle. Experiencia en migración de servidores
+                físicos a nubes privadas y auditoría de datos.
+              </p>
             </div>
-            <p>
-              Implementación de aplicativos bancarios web en .NET MVC, microservicios en Java Spring Boot y soluciones móviles nativas y multiplataforma con Flutter (Bloc/MVVM) y Xamarin Forms.
-            </p>
-          </article>
-        </div>
+          </details>
+
+          <!-- ── Especialidad 3 ── -->
+          <details class="highlight-card highlight-accordion">
+            <summary class="highlight-accordion-summary">
+              <div class="highlight-header-inner">
+                <div class="highlight-icon-box" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                       stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+                <h3>Desarrollo Transaccional (.NET / Java / Flutter)</h3>
+              </div>
+              <svg class="highlight-chevron" viewBox="0 0 24 24" fill="none"
+                   stroke="currentColor" stroke-width="2.5"
+                   stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"></polyline>
+              </svg>
+            </summary>
+            <div class="highlight-accordion-body">
+              <p>
+                Implementación de aplicativos bancarios web en .NET MVC,
+                microservicios en Java Spring Boot y soluciones móviles nativas
+                y multiplataforma con Flutter (Bloc/MVVM) y Xamarin Forms.
+              </p>
+            </div>
+          </details>
+
+        </div><!-- /highlights-grid -->
       </div>
     </section>
+
   </main>
 
-  <!-- ========================================================================
+  <!-- ======================================================================
        PIE DE PÁGINA INSTITUCIONAL
-       ======================================================================== -->
+       ====================================================================== -->
   <footer class="site-footer">
     <div class="container footer-content">
       <p class="footer-copy">
-        &copy; <span id="current-year"></span> Jefferson Fabian Guaranda Soledispa · Ingeniero en Sistemas Computacionales.<br>
+        &copy; <span id="current-year"></span> Jefferson Fabian Guaranda Soledispa &middot; Ingeniero en Sistemas Computacionales.<br>
         Portafolio profesional desarrollado bajo estándares web nativos (HTML5, CSS3 y Vanilla JS).
       </p>
       <ul class="footer-links">
         <li><a href="https://ec.linkedin.com/in/fabian-guaranda-24b095121" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        <li><a href="https://github.com/93Jefferson" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://github.com/93Jefferson"                       target="_blank" rel="noopener noreferrer">GitHub</a></li>
         <li><a href="contact.html">Contacto</a></li>
       </ul>
     </div>
   </footer>
 
-  <!-- Script global para menú móvil, enlace activo y año dinámico -->
+  <!-- Barra de Navegación Inferior para Dispositivos Móviles (Mobile App TabBar) -->
+  <nav class="mobile-bottom-nav" aria-label="Navegación móvil inferior">
+    <a href="index.html"    class="bottom-nav-item nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+      </svg>
+      <span>Inicio</span>
+    </a>
+    <a href="about.html"    class="bottom-nav-item nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </svg>
+      <span>Sobre mí</span>
+    </a>
+    <a href="skills.html"   class="bottom-nav-item nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+        <polyline points="2 17 12 22 22 17"></polyline>
+        <polyline points="2 12 12 17 22 12"></polyline>
+      </svg>
+      <span>Habilidades</span>
+    </a>
+    <a href="projects.html" class="bottom-nav-item nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </svg>
+      <span>Proyectos</span>
+    </a>
+    <a href="contact.html"  class="bottom-nav-item nav-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+      <span>Contacto</span>
+    </a>
+  </nav>
+
   <script src="js/main.js"></script>
 </body>
 </html>

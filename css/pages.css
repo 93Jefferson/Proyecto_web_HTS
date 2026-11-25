@@ -875,3 +875,575 @@
     gap: 0.5rem;
   }
 }
+
+/* ==========================================================================
+   OPTIMIZACIÓN MÓVIL AVANZADA: Reducción de Texto y Contenido Secundario
+   Clase .mobile-hidden: oculta bloque en pantallas <= 768px
+   Clase .mobile-truncate: limita texto a 2 líneas con elipsis en móvil
+   ========================================================================== */
+
+/* Utilidades de visibilidad para control de contenido en móvil */
+@media (max-width: 768px) {
+  /* Ocultar elementos secundarios no esenciales en móvil */
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  /* Truncar texto largo a 2 líneas con elipsis */
+  .mobile-truncate {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Truncar texto largo a 3 líneas con elipsis */
+  .mobile-truncate-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* ── INDEX: Hero ── */
+  /* Ocultar descripción larga del hero; se ve el título y los botones */
+  .hero-description {
+    font-size: 0.93rem;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Reducir badges a solo 2 visibles (los 2 primeros permanecen; los otros ocultos con .mobile-hidden en HTML) */
+  .hero-meta-badges {
+    gap: 0.4rem;
+  }
+  .hero-meta-badge {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+  }
+
+  /* ── SECCIÓN GENERAL ── */
+  .section {
+    padding: 2.75rem 0;
+  }
+
+  .section-header {
+    margin-bottom: 1.75rem;
+  }
+
+  /* Ocultar subtítulo de sección (descripción larga debajo del título) */
+  .section-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  /* ── HIGHLIGHTS (index.html): tarjetas de especialidades ── */
+  .highlight-card p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.88rem;
+  }
+
+  .highlights-grid {
+    gap: 1rem;
+  }
+
+  /* ── ABOUT: línea de tiempo ── */
+  .timeline-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.88rem;
+  }
+
+  /* Tabla de datos: reducir padding y tamaño de texto */
+  .about-details-table .detail-value {
+    font-size: 0.88rem;
+  }
+  .about-details-table .detail-label {
+    font-size: 0.72rem;
+  }
+
+  /* ── SKILLS: barras de progreso ── */
+  .skill-name {
+    font-size: 0.88rem;
+  }
+  .skill-level-tag {
+    font-size: 0.75rem;
+  }
+
+  /* ── PROJECTS: fichas de proyecto ── */
+  .project-card {
+    padding: 1.25rem 1rem;
+  }
+
+  /* Descripción de proyecto truncada a 3 líneas */
+  .project-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.88rem;
+  }
+
+  /* Ocultar segundo botón de acciones en tarjetas de proyecto en móvil */
+  .project-actions .btn-outline {
+    display: none;
+  }
+
+  /* Tabla de ficha técnica del proyecto: 2 líneas máximo en valor */
+  .project-spec-table td {
+    font-size: 0.82rem;
+    padding: 0.3rem 0.5rem;
+  }
+
+  /* Reducir badges de tecnologías */
+  .tech-badge {
+    font-size: 0.72rem;
+    padding: 0.15rem 0.5rem;
+  }
+
+  /* ── CONTACT: tarjetas de canal ── */
+  .channel-info {
+    font-size: 0.82rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  /* Formulario más compacto */
+  .form-label {
+    font-size: 0.82rem;
+  }
+
+  .form-input,
+  .form-textarea {
+    padding: 0.6rem 0.75rem;
+    font-size: 16px; /* Mantener 16px para evitar zoom en iOS */
+  }
+
+  .form-textarea {
+    min-height: 90px;
+  }
+
+  /* ── FOOTER en móvil: compacto ── */
+  .footer-copy {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  /* Reducir padding del contenedor */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+
+/* ==========================================================================
+   SISTEMA DE ACORDEONES MÓVILES
+   Paneles de contenido desplegable para pantallas <= 768px.
+   El JS en main.js añade dinámicamente las clases y el botón toggle.
+   ========================================================================== */
+
+/* ── Panel colapsable: estado cerrado ── */
+.accordion-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Forzar colapso inicial hasta que JS lo abra */
+}
+
+/* ── Panel colapsable: estado abierto ── */
+.accordion-panel.accordion-open {
+  /* max-height se inyecta por JS con scrollHeight real */
+  overflow: visible;
+}
+
+/* ── Tarjeta contenedora cuando está abierta ── */
+.accordion-open.highlight-card,
+.accordion-open.skill-category,
+.accordion-open.project-card,
+.accordion-open.channel-card {
+  box-shadow: var(--shadow-md);
+}
+
+/* ── Cabecera disparadora (trigger) ── */
+.accordion-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+}
+
+/* En la cabecera del highlight-card, el icono ya ocupa espacio;
+   el h3 crece y el botón queda al extremo derecho */
+.highlight-header.accordion-trigger {
+  flex-wrap: nowrap;
+}
+
+/* ── Botón toggle (flecha) ── */
+.accordion-toggle {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: none;
+  background: transparent;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: color 0.2s ease, background-color 0.2s ease;
+  padding: 0;
+  margin-left: auto;
+}
+
+.accordion-toggle:hover,
+.accordion-trigger:hover .accordion-toggle {
+  color: var(--color-secondary);
+  background-color: var(--color-primary-light);
+}
+
+/* ── Flecha SVG interna ── */
+.accordion-chevron {
+  width: 18px;
+  height: 18px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+}
+
+/* Rotar flecha cuando el acordeón está abierto */
+.accordion-open .accordion-chevron {
+  transform: rotate(180deg);
+}
+
+/* ── Separador visual inferior en tarjetas cerradas ── */
+@media (max-width: 768px) {
+  /* Hover visual sobre la cabecera disparadora en móvil */
+  .accordion-trigger:active {
+    background-color: var(--color-primary-light);
+    border-radius: var(--radius-sm);
+  }
+
+  /* Ajuste de padding del panel cuando se abre para no cortar sombras */
+  .accordion-panel.accordion-open {
+    padding-top: 0.75rem;
+  }
+
+  /* Skill-category: separador entre título y lista de habilidades */
+  .skill-category .accordion-panel.accordion-open {
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+    margin-top: 0.5rem;
+  }
+
+  /* project-body abierto: añadir espacio superior */
+  .project-body.accordion-panel.accordion-open {
+    padding-top: 0.85rem;
+  }
+
+  /* timeline-item: ajustar la visualización del trigger */
+  .timeline-title.accordion-trigger {
+    padding: 0.2rem 0;
+  }
+
+  /* channel-card: cabecera bien alineada */
+  .channel-header.accordion-trigger {
+    padding-bottom: 0.25rem;
+  }
+
+  /* Indicador de "toca para expandir" – texto auxiliar pequeño en cabecera */
+  .accordion-trigger::after {
+    content: '';  /* vacío: la flecha SVG ya lo indica visualmente */
+  }
+
+  /* Suavizar el contenedor de acordeones al redimensionar */
+  .highlight-card,
+  .skill-category,
+  .project-card,
+  .channel-card {
+    transition: box-shadow 0.2s ease, padding 0.2s ease;
+  }
+}
+
+
+/* ==========================================================================
+   ACORDEONES NATIVOS DEL INDEX (details / summary)
+   En escritorio: se muestran como layout normal.
+   En móvil (<=768px): funcionan como paneles desplegables nativos del navegador.
+   ========================================================================== */
+
+/* ── Resetear el marcador nativo del details ── */
+details.hero-accordion,
+details.highlight-accordion {
+  /* Quitar triángulo nativo del navegador */
+  list-style: none;
+}
+details.hero-accordion > summary,
+details.highlight-accordion > summary {
+  list-style: none;
+}
+details.hero-accordion > summary::-webkit-details-marker,
+details.highlight-accordion > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* ========================================================================
+   HERO ACCORDION: descripción desplegable del hero
+   ======================================================================== */
+
+/* ── ESCRITORIO: el details se comporta como bloque simple, siempre visible ── */
+details.hero-accordion {
+  display: contents; /* Los hijos se integran al flujo normal */
+}
+
+details.hero-accordion > summary.hero-accordion-summary {
+  display: none; /* En escritorio NO se muestra el summary (todo visible) */
+}
+
+details.hero-accordion > .hero-accordion-body {
+  /* En escritorio todo el cuerpo es visible directamente */
+  display: contents;
+}
+
+/* ── MÓVIL: el details se convierte en acordeón ── */
+@media (max-width: 768px) {
+  details.hero-accordion {
+    display: block;
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    margin-bottom: 1rem;
+    overflow: hidden;
+  }
+
+  /* Summary visible como cabecera tocable */
+  details.hero-accordion > summary.hero-accordion-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.85rem 1rem;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    background-color: var(--color-primary-light);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .hero-accordion-label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--color-secondary);
+  }
+
+  .hero-accordion-chevron {
+    width: 18px;
+    height: 18px;
+    color: var(--color-secondary);
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  details.hero-accordion[open] .hero-accordion-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* Cuerpo del hero accordion */
+  details.hero-accordion > .hero-accordion-body {
+    display: block;
+    padding: 1rem;
+  }
+
+  /* Dentro del accordion-body el hero-description es normal */
+  .hero-accordion-body .hero-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    margin-bottom: 0.85rem;
+    display: block; /* Cancelar el -webkit-line-clamp anterior */
+    -webkit-line-clamp: unset;
+    -webkit-box-orient: unset;
+    overflow: visible;
+  }
+
+  .hero-accordion-body .hero-meta-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+}
+
+/* ========================================================================
+   HIGHLIGHT ACCORDION: especialidades técnicas desplegables
+   ======================================================================== */
+
+/* ── ESCRITORIO: las tarjetas highlight se muestran como siempre ── */
+details.highlight-accordion {
+  /* Comportamiento normal de tarjeta en escritorio */
+}
+
+/* En escritorio, ocultar la flecha chevron */
+.highlight-accordion .highlight-chevron {
+  display: none;
+}
+
+/* En escritorio, .highlight-header-inner replica la estructura antigua */
+.highlight-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex: 1;
+}
+
+details.highlight-accordion > summary.highlight-accordion-summary {
+  /* En escritorio: el summary muestra el header visible como siempre */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: default; /* En escritorio no es clickable */
+  list-style: none;
+  padding: 0; /* Hereda del .highlight-card */
+}
+
+/* Body del highlight: en escritorio, siempre visible */
+.highlight-accordion-body {
+  margin-top: 0.75rem;
+}
+
+/* ── MÓVIL: las tarjetas se convierten en acordeones apilados ── */
+@media (max-width: 768px) {
+  /* Cambiar la grid a columna única */
+  .highlights-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0 !important;
+  }
+
+  /* Cada highlight-card en móvil: sin sombra, sin radio propio, apilada */
+  details.highlight-accordion.highlight-card {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: none;
+    padding: 0;
+    background-color: var(--color-surface);
+  }
+
+  /* Primera tarjeta con borde superior */
+  details.highlight-accordion.highlight-card:first-child {
+    border-top: 1px solid var(--color-border);
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+  }
+
+  /* Última tarjeta con borde inferior y radio inferior */
+  details.highlight-accordion.highlight-card:last-child {
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+  }
+
+  /* Cuando está abierta: resaltar levemente */
+  details.highlight-accordion[open].highlight-card {
+    background-color: var(--color-primary-light);
+    border-left: 3px solid var(--color-secondary);
+  }
+
+  /* Summary tocable en móvil */
+  details.highlight-accordion > summary.highlight-accordion-summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.1rem;
+    cursor: pointer;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    gap: 0.5rem;
+  }
+
+  details.highlight-accordion > summary.highlight-accordion-summary:active {
+    background-color: rgba(0, 102, 204, 0.06);
+  }
+
+  /* Mostrar la flecha en móvil */
+  .highlight-accordion .highlight-chevron {
+    display: block;
+    width: 20px;
+    height: 20px;
+    color: var(--color-text-light);
+    flex-shrink: 0;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Rotar flecha cuando está abierto */
+  details.highlight-accordion[open] .highlight-chevron {
+    transform: rotate(180deg);
+    color: var(--color-secondary);
+  }
+
+  /* Título dentro del summary en móvil */
+  .highlight-header-inner h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    line-height: 1.3;
+  }
+
+  details.highlight-accordion[open] .highlight-header-inner h3 {
+    color: var(--color-secondary);
+  }
+
+  /* Ícono en móvil: más compacto */
+  .highlight-header-inner .highlight-icon-box {
+    width: 32px;
+    height: 32px;
+    min-width: 32px;
+    border-radius: var(--radius-sm);
+  }
+
+  .highlight-header-inner .highlight-icon-box svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  /* Cuerpo del acordeón: texto completo al abrir */
+  .highlight-accordion-body {
+    padding: 0 1.1rem 1rem;
+    margin-top: 0;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .highlight-accordion-body p {
+    font-size: 0.88rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    display: block;
+    -webkit-line-clamp: unset;
+    overflow: visible;
+  }
+}
